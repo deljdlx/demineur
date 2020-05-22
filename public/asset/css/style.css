@@ -1,0 +1,162 @@
+:root {
+    --demineur-background-color: #E4E6E8;
+    --demineur-cell-color: #DBDBDB;
+}
+.demineur {
+    display: inline-block;
+    width: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 2rem;
+    background-color: var(--demineur-background-color);
+}
+
+.demineur table {
+    border-collapse: separate;
+    border-spacing: 1px;
+    background-color:#333;
+}
+
+.demineur td {
+    
+    border-top: solid 1px #FFF;
+    border-left: solid 1px #FFF;
+    border-right:  solid 1px #888;
+    border-bottom:  solid 1px #888;
+
+    background-color:var(--demineur-cell-color);
+
+    height: 32px;
+    width: 32px;
+
+    text-align: center;
+    font-size: 24px;
+
+}
+
+
+.demineur td:hover {
+    background-color:#CDC;
+}
+
+.demineur td.mine:before {
+    font-family:"Font Awesome 5 Free";
+    /*content: "\f188";*/
+    content: '💩';
+    font-weight: 900;
+    font-size: 24px;
+    display: block;
+    margin-left: 
+}
+
+
+.demineur td.revealed {
+    
+    border-top: inset 1px #FFF;
+    border-left: inset 1px #FFF;
+    border-right:  inset 1px #888;
+    border-bottom:  inset 1px #888;
+
+    background-color:#EEE;
+
+    height: 32px;
+    width: 32px;
+
+    text-align: center;
+    font-size: 24px;
+}
+
+.demineur td.fail {
+    background-color:#F00;
+}
+
+
+.demineur td.marked:before {
+    font-family:"Font Awesome 5 Free";
+    content: "\f024";
+    font-weight: 900;
+    font-size: 24px;
+    display: block;
+    margin-left: 
+}
+
+.demineur td.reserved:before {
+    font-family:"Font Awesome 5 Free";
+    content: "\f128";
+    font-weight: 900;
+    font-size: 24px;
+    display: block;
+    margin-left: 
+}
+
+
+.demineur .lose-screen {
+    position: absolute;
+    width: 50vw;
+    left: 25vw;
+    top: 10vh;
+    margin:auto;
+    padding: 2rem;
+    background-color: rgba(200,200,200,0.7);
+    border: solid 1px #333;
+    display: none;
+}
+
+.demineur .lose-screen img {
+    width:100%;
+}
+
+
+.demineur .victory-screen {
+    position: absolute;
+    width: 50vw;
+    left: 25vw;
+    top: 10vh;
+    margin:auto;
+    padding: 2rem;
+    background-color: rgba(200,200,200,0.7);
+    border: solid 1px #333;
+    display: none;
+}
+
+.demineur .victory-screen img {
+    width:100%;
+}
+
+
+
+
+
+
+.demineur .header {
+    display: flex;
+    width:100%;
+    /*border: solid 1px #333;*/
+    padding: 4px;
+    font-size: 2rem;
+    
+    
+}
+
+
+.demineur .mine-counter {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.demineur .mine-counter:before {
+    content: '💩';
+}
+
+
+.demineur .timer {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.demineur .timer:after {
+    content: '🕒';
+}
+
+.demineur .filler {
+    flex-grow: 1
+}
