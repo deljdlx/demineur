@@ -2,7 +2,7 @@
 
 POC démineur en js
 
-Démo http://resource.jlb.ninja/demineur/public/
+Démo http://demineur.jlb.ninja/
 
 ## TODO
 - Commenter le code
