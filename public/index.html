@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-<title>JS Démineur</title>
-<link rel="stylesheet" href="asset/css/style.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
-
+    <title>JS Démineur</title>
+    <link rel="stylesheet" href="asset/css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
 </head>
 <body>
-    
 
 
 <script>
@@ -55,7 +52,7 @@ class Demineur
                     this.matrix[x] = [];
                 }
                 this.matrix[x][y] = 0;
-               
+
             }
         }
 
@@ -72,9 +69,7 @@ class Demineur
             }
         }
 
-
         console.log(this);
-
      }
 
     generateMine()
@@ -91,7 +86,7 @@ class Demineur
 
             return true;
         }
-        
+
         return false;
     }
 
@@ -119,9 +114,6 @@ class Demineur
 
         return count;
     }
-          
-
-
 
     contextOnCell(evt) {
 
@@ -162,7 +154,6 @@ class Demineur
         }
     }
 
-
     clicOnCell(evt) {
         if(this.end) {
             return false;
@@ -180,8 +171,6 @@ class Demineur
             this.win();
         }
     }
-
-
 
     render(container)
      {
@@ -209,8 +198,7 @@ class Demineur
         }
 
         this.field.innerHTML = '';
-        
-        
+
         for(let y = 0 ; y < this.height; y++) {
             let tr= document.createElement('tr');
             for(let x = 0 ; x < this.width; x++) {
@@ -250,8 +238,6 @@ class Demineur
         this.element.appendChild(this.header);
     }
 
-
-
     reveal(x, y, auto = false) {
         let td = this.td(x,y);
         let value  = this.cell(x,y);
@@ -267,7 +253,7 @@ class Demineur
         }
 
         td.classList.add('revealed')
-               
+
         if(value === false && !auto) {
             td.classList.add('mine')
             td.classList.add('fail')
@@ -296,7 +282,6 @@ class Demineur
         }
     }
 
-
     checkVictory() {
         let founded = 0;
         for(let index in this.markedCells) {
@@ -313,9 +298,6 @@ class Demineur
         return false;
     }
 
-
-
-
     lose() {
         this.loseScreen.style.display = 'block';
         this.stop();
@@ -331,7 +313,7 @@ class Demineur
         this.loseScreen.classList.add('lose-screen');
         this.loseScreen.innerHTML = '<img src="' + this.loseImageURL + '"/><hr/>';
         this.loseScreen.appendChild(this.getRestartButton());
-        
+
         return this.loseScreen;
     }
 
@@ -340,6 +322,7 @@ class Demineur
         this.victoryScreen.classList.add('victory-screen');
         this.victoryScreen.innerHTML = '<img src="' + this.vitoryImageURL + '"/><hr/>';
         this.victoryScreen.appendChild(this.getRestartButton());
+
         return this.victoryScreen;
     }
 
@@ -348,6 +331,7 @@ class Demineur
         button.classList.add('add')
         button.innerHTML = 'Rejouer';
         button.addEventListener('click', (evt) => {this.reset()});
+
         return button;
     }
 
@@ -365,8 +349,6 @@ class Demineur
         this.generateMatrix();
         this.render(this.container);
     }
-    
-
 
     stop() {
         this.end = true;
@@ -385,7 +367,6 @@ class Demineur
             }
         }
     }
-
 
     start() {
         this.started = true;
